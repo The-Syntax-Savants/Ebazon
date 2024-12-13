@@ -67,6 +67,6 @@ server.use((error, req, res, next) => {
   res.send({ name: error.name, message: error.message });
 });
 
-server.listen(PORT, "0.0.0.0", () => {
+server.listen(PORT, () => {
   console.log("The server is up on port", PORT);
 });
