@@ -10,7 +10,7 @@ const server = express();
 const Stripe = new StripePackage(
   "sk_test_51MvOTQLhGAqNc30vEsExUrFXzbDpsKHcOIGxxIAmuYLf6DD3gYXMqyFzC9MEJz9aJ8cnUayMiK3MGbUtb4y5qBcP00OkK8mCMx"
 );
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 morgan.token("body", (req) => JSON.stringify(req.body));
 const customMorganFormat =
@@ -67,6 +67,6 @@ server.use((error, req, res, next) => {
   res.send({ name: error.name, message: error.message });
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, "0.0.0.0", () => {
   console.log("The server is up on port", PORT);
 });
