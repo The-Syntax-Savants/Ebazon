@@ -4,5 +4,5 @@
 
 export const BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://ebazon.onrender.com/api"
+    ? "https://ebazon-lrvp.onrender.com/api"
     : "http://localhost:3001/api";
